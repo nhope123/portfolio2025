@@ -4,6 +4,6 @@ const light = createTheme({});
 const dark = createTheme({});
 
 export const theme = {
-	light,
-	dark,
+  light,
+  dark,
 };

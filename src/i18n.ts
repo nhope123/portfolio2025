@@ -11,11 +11,11 @@ i18n
     fallbackLng: 'en', // Default language
     debug: true, // Enable logging in development
     interpolation: {
-      escapeValue: false // React already escapes values
+      escapeValue: false, // React already escapes values
     },
     backend: {
-      loadPath: '/locales/{{lng}}/translation.json' // Path to translation files
-    }
+      loadPath: '/locales/{{lng}}/translation.json', // Path to translation files
+    },
   });
 
 export default i18n;
