@@ -1,10 +1,11 @@
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+
 import './App.css';
 import reactLogo from './assets/react.svg';
-import { theme } from './theme';
-import viteLogo from '/vite.svg';
+import viteLogo from './assets/vite.svg';
+import { theme } from './theme.ts';
 
 function App() {
   const [mode, setMode] = useState<'light' | 'dark'>('light');

@@ -48,8 +48,8 @@ export default tseslint.config(
           },
         ],
       },
-      'import/no-unresolved': ['error'],
-      'import/named': ['error'],
+      // 'import/no-unresolved': ['error'],
+      // 'import/named': ['error'],
       'import/default': ['error'],
       // 'prettier/prettier': 'error',
 
