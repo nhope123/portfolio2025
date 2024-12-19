@@ -43,6 +43,7 @@ export default tseslint.config(
               'sibling',
               'index',
               'object',
+              'type',
             ],
             'newlines-between': 'always',
           },

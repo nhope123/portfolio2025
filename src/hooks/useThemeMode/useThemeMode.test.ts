@@ -17,7 +17,6 @@ describe('useThemeMode', () => {
     (useLocalStorage as Mock)
       .mockReturnValueOnce([themeModes[0], setLocalStorageMock])
       .mockReturnValueOnce([themeModes[1], setLocalStorageMock])
-      .mockReturnValueOnce([themeModes[2], setLocalStorageMock])
       .mockReturnValueOnce([themeModes[0], setLocalStorageMock]);
   });
 
@@ -45,16 +44,10 @@ describe('useThemeMode', () => {
     act(() => {
       result.current.setMode();
     });
-    rerender();
-    expect(result.current.mode).toEqual(themeModes[2]);
-    expect(setLocalStorageMock).toHaveBeenCalledTimes(2);
-
-    act(() => {
-      result.current.setMode();
-    });
+    
     rerender();
     expect(result.current.mode).toEqual(themeModes[0]);
-    expect(setLocalStorageMock).toHaveBeenCalledTimes(3);
+    expect(setLocalStorageMock).toHaveBeenCalledTimes(2);
   });
 
   it('should set a specific mode', () => {

@@ -1,3 +1,12 @@
 {
-  "welcome": "welcome to the translation version"
+  "welcome": "welcome to the translation version",
+  "home": {
+    "button1": "View Projects",
+    "button2": "Download Resume",
+    "author": "Nial ",
+    "greeting": "Hi, I'm ",
+    "role": "Frontend Developer",
+    "description": "Crafting Seamless UIs",
+    "intro": "I build accessible, performant, and delightful web applications using modern tools like <strong>React, TypeScript</strong>, and <strong>Material-UI</strong>. I’m passionate about clean code, design systems, and intuitive user experiences."
+  }
 }

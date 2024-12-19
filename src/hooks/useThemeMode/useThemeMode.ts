@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { useLocalStorage } from 'usehooks-ts';
 
-export const themeModes = ['light', 'dark', 'system'];
+export const themeModes = ['light', 'dark'];
 
 export type ThemeMode = (typeof themeModes)[number];
 
