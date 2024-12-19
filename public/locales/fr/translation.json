@@ -1,0 +1,18 @@
+{
+  "home": {
+    "button1": "Voir les projets",
+    "button2": "Télécharger le CV",
+    "author": "Nial ",
+    "greeting": "Salut, je suis ",
+    "role": "Développeur Frontend",
+    "description": "Créer des interfaces utilisateur fluides",
+    "intro": "Je construis des applications web accessibles, performantes et agréables en utilisant des outils modernes comme <strong>React, TypeScript</strong> et <strong>Material-UI</strong>. Je suis passionné par le code propre, les systèmes de conception et les expériences utilisateur intuitives."
+  },
+  "menu": {
+    "aboutMe": "À propos de moi",
+    "contact": "Contact",
+    "home": "Accueil",
+    "projects": "Projets",
+    "skills": "Compétences"
+  }
+}
