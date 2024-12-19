@@ -4,7 +4,9 @@ import { FC, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
 
-const AppMenu: FC = () => {
+import { AppMenuProps } from './types.ts';
+
+const AppMenu: FC<AppMenuProps> = ({ onMenuItemClick }) => {
   const { t } = useTranslation(['translation']);
   const navigate = useNavigate();
 
@@ -24,9 +26,10 @@ const AppMenu: FC = () => {
 
   const _handleBtnClick = useCallback(
     (path: string) => {
+      if (onMenuItemClick) onMenuItemClick();
       navigate(path);
     },
-    [navigate],
+    [navigate, onMenuItemClick],
   );
 
   return (

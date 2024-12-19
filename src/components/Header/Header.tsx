@@ -6,6 +6,7 @@ import Toolbar from '@mui/material/Toolbar';
 import { FC } from 'react';
 
 import AppMenu from '../AppMenu/AppMenu.tsx';
+import MobileMenu from '../AppMenu/MobileMenu.tsx';
 
 const rightAppBarSx: SxProps<Theme> = {
   display: 'flex',
@@ -24,10 +25,10 @@ const rightMenuSx: SxProps<Theme> = {
 
 const Header: FC = () => {
   return (
-    <AppBar position="static">
+    <AppBar position="sticky">
       <Container maxWidth={false}>
         <Toolbar disableGutters>
-          {/* <MobileMenu /> */}
+          <MobileMenu />
           {/* <Branding /> */}
           <Box sx={rightAppBarSx}>
             <Box sx={rightMenuSx}>
