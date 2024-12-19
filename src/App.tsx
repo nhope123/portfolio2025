@@ -1,18 +1,16 @@
-import { CssBaseline, ThemeProvider } from '@mui/material';
-import { RouterProvider } from 'react-router';
+import Grid2 from '@mui/material/Grid2';
+import { useRoutes } from 'react-router';
+
 import './App.css';
 
 import routes from './routes.tsx';
-import theme from './theme.ts';
 
 const App = () => {
+  const element = useRoutes(routes);
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <RouterProvider router={routes} />
-      </ThemeProvider>
-    </>
+    <Grid2 container direction={'column'} spacing={2}>
+      {element}
+    </Grid2>
   );
 };
 
