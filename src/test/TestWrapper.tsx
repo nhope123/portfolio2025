@@ -1,6 +1,8 @@
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { ReactNode } from 'react';
-import { theme } from '../theme';
+import { BrowserRouter } from 'react-router';
+
+import theme from '../theme.ts';
 
 export interface TestWrapperProps {
   children: ReactNode;
@@ -9,10 +11,12 @@ export interface TestWrapperProps {
 const TestWrapper = (props: TestWrapperProps) => {
   const { children } = props;
   return (
-    <>
-      <CssBaseline />
-      <ThemeProvider theme={theme['light']}>{children}</ThemeProvider>
-    </>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        {children}
+      </ThemeProvider>
+    </BrowserRouter>
   );
 };
 
