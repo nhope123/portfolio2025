@@ -20,6 +20,18 @@ const AppMenu: FC<AppMenuProps> = ({ onMenuItemClick }) => {
         content: t('menu.projects'),
         path: '/projects',
       },
+      {
+        content: t('menu.aboutMe'),
+        path: '/about-me',
+      },
+      {
+        content: t('menu.skills'),
+        path: '/skills',
+      },
+      {
+        content: t('menu.contact'),
+        path: '/contact',
+      },
     ],
     [t],
   );
