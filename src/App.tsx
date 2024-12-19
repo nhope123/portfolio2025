@@ -1,7 +1,8 @@
 import { CssBaseline, ThemeProvider } from '@mui/material';
-
+import { RouterProvider } from 'react-router';
 import './App.css';
-import Home from './pages/Home/Home.tsx';
+
+import routes from './routes.tsx';
 import theme from './theme.ts';
 
 const App = () => {
@@ -9,7 +10,7 @@ const App = () => {
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Home />
+        <RouterProvider router={routes} />
       </ThemeProvider>
     </>
   );

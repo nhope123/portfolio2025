@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router';
 
 import Home from './pages/Home/Home.tsx';
+import Project from './pages/Project/Project.tsx';
 
 const routes = createBrowserRouter([
   {
@@ -8,8 +9,11 @@ const routes = createBrowserRouter([
     index: true,
     path: '/',
   },
-], {
-  
-});
+  {
+    element: <Project />,
+    index: true,
+    path: '/projects',
+  },
+]);
 
 export default routes;
