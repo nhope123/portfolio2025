@@ -19,3 +19,11 @@ export default meta;
 export const Primary: StoryObj<AppMenuProps> = {
   args: {},
 };
+
+export const Secondary: StoryObj<AppMenuProps> = {
+  args: {
+    onMenuItemClick: () => {
+      alert('Item clicked!');
+    },
+  },
+};

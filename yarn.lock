@@ -985,6 +985,11 @@
     browser-assert "^1.2.1"
     ts-dedent "^2.0.0"
 
+"@storybook/client-logger@^8.4.7":
+  version "8.4.7"
+  resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-8.4.7.tgz#5dae0a2ad78aae1063a56443bec8156bd29e8fa2"
+  integrity sha512-MNkNztleN2LKt16hcX7IfCGOOzlpbaCCgrv4t28S/CpiyCIfvaVtxNZbSWrPV7kCbbL0jKYmRwY2UOutjUn7tg==
+
 "@storybook/components@8.4.7":
   version "8.4.7"
   resolved "https://registry.yarnpkg.com/@storybook/components/-/components-8.4.7.tgz#09eeffa07aa672ad3966ca1764a43003731b1d30"
@@ -1014,7 +1019,7 @@
   dependencies:
     unplugin "^1.3.1"
 
-"@storybook/csf@^0.1.11":
+"@storybook/csf@^0.1.0", "@storybook/csf@^0.1.11":
   version "0.1.12"
   resolved "https://registry.yarnpkg.com/@storybook/csf/-/csf-0.1.12.tgz#1dcfa0f398a69b834c563884b5f747db3d5a81df"
   integrity sha512-9/exVhabisyIVL0VxTCxo01Tdm8wefIXKXfltAPTSr8cbLn5JAxGQ6QV3mjdecLGEOucfoVhAKtJfVHxEK1iqw==
@@ -1072,6 +1077,13 @@
     "@storybook/preview-api" "8.4.7"
     "@storybook/react-dom-shim" "8.4.7"
     "@storybook/theming" "8.4.7"
+
+"@storybook/testing-react@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@storybook/testing-react/-/testing-react-2.0.1.tgz#89417ab9f4261d0d0db8578a611b222adc652e36"
+  integrity sha512-D0fT7f0TUU8+usR+0NSyCYQCYDWernQqGZou32ISsoBkY9IiH1JMY4hQE8zUaGozu9eMlaa2wieWIMsjWovpdw==
+  dependencies:
+    "@storybook/csf" "^0.1.0"
 
 "@storybook/theming@8.4.7":
   version "8.4.7"

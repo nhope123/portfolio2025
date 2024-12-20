@@ -1,10 +1,10 @@
 import ListItemText from '@mui/material/ListItemText';
 import MenuItem from '@mui/material/MenuItem';
-import { FC, useCallback, useMemo } from 'react';
+import { type FC, type MouseEvent, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
 
-import { AppMenuProps } from './types.ts';
+import { type AppMenuProps } from './types.ts';
 
 const AppMenu: FC<AppMenuProps> = ({ onMenuItemClick }) => {
   const { t } = useTranslation(['translation']);
@@ -37,8 +37,8 @@ const AppMenu: FC<AppMenuProps> = ({ onMenuItemClick }) => {
   );
 
   const _handleBtnClick = useCallback(
-    (path: string) => {
-      if (onMenuItemClick) onMenuItemClick();
+    (e: MouseEvent<HTMLLIElement>, path: string) => {
+      if (onMenuItemClick) onMenuItemClick(e);
       navigate(path);
     },
     [navigate, onMenuItemClick],
@@ -47,7 +47,7 @@ const AppMenu: FC<AppMenuProps> = ({ onMenuItemClick }) => {
   return (
     <>
       {menuItems.map((i) => (
-        <MenuItem key={i.content} onClick={() => _handleBtnClick(i.path)}>
+        <MenuItem key={i.content} onClick={(e) => _handleBtnClick(e, i.path)}>
           <ListItemText>{i.content}</ListItemText>
         </MenuItem>
       ))}

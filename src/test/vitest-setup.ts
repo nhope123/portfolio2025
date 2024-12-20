@@ -1,17 +1,20 @@
-import 'vitest';
 import '@testing-library/jest-dom';
-import { render, RenderOptions } from '@testing-library/react';
+import * as TestingLibrary from '@testing-library/react';
+import { type RenderOptions } from '@testing-library/react';
 import { ReactNode } from 'react';
-import TestWrapper from './TestWrapper';
+import 'vitest';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+import TestWrapper from './TestWrapper.tsx';
+
+const { render, ...rest } = TestingLibrary;
+
 const customRender = (
   ui: ReactNode,
-  options: RenderOptions<any, HTMLElement, HTMLElement>,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  options?: RenderOptions<any, HTMLElement, HTMLElement>,
 ) => render(ui, { wrapper: TestWrapper, ...options });
 
-// re-export everything
-export * from '@testing-library/react';
+// export { rest };
 
 // override render method
-export { customRender as render };
+export { customRender as render, rest };

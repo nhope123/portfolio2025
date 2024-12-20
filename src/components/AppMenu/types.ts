@@ -1,5 +1,5 @@
-
+import { type MouseEvent } from 'react';
 
 export type AppMenuProps = {
-  onMenuItemClick?: () => void;
-}
+  onMenuItemClick?: (event?: MouseEvent<HTMLLIElement> | undefined) => void;
+};
