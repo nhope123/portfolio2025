@@ -14,7 +14,7 @@ import theme from './theme.ts';
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider defaultMode='light' theme={theme}>
         <CssBaseline />
         <App />
       </ThemeProvider>
