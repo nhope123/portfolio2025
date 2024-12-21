@@ -1,4 +1,8 @@
 {
+  "generic": {
+    "github": "Github repository",
+    "website": "Website"
+  },
   "home": {
     "button1": "View Projects",
     "button2": "Download Resume",

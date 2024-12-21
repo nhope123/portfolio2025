@@ -7,28 +7,36 @@ import CardMedia from '@mui/material/CardMedia';
 import IconButton, { type IconButtonProps } from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { FC, useCallback, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import { type PortfolioCardProps } from './types.ts';
+import type { SxProps, Theme } from '@mui/material/styles';
+import type { PortfolioCardProps } from './types.ts';
+
+const rootSx: SxProps<Theme> = {
+  maxWidth: 345,
+  width: '100%',
+};
 
 const PortfolioCard: FC<PortfolioCardProps> = (props) => {
-  const { description, imageUrl, repositoryUrl, title, websiteUrl } = props;
+  const { description, imageUrl, repositoryUrl, name, homepageUrl } = props;
+  const { t } = useTranslation('translation');
 
   const actionButtons = useMemo(
     () => [
       {
         color: 'primary' as IconButtonProps['color'],
-        title: 'Github repository',
+        title: t('generic.github'),
         url: repositoryUrl,
         icon: <GitHub />,
       },
       {
         color: 'secondary' as IconButtonProps['color'],
-        title: 'Website',
-        url: websiteUrl,
+        title: t('generic.website'),
+        url: homepageUrl,
         icon: <WebRounded />,
       },
     ],
-    [repositoryUrl, websiteUrl],
+    [repositoryUrl, t, homepageUrl],
   );
 
   const _handleClick = useCallback((url?: string) => {
@@ -38,18 +46,28 @@ const PortfolioCard: FC<PortfolioCardProps> = (props) => {
   }, []);
 
   return (
-    <Card>
+    <Card sx={rootSx}>
       {/* Media */}
-      <CardMedia alt={`${title} card`} component="img" image={imageUrl} />
+      <CardMedia
+        alt={`${name} card`}
+        component="img"
+        height={140}
+        image={imageUrl}
+      />
       <CardContent>
-        <Typography variant="h5">{title}</Typography>
+        <Typography variant="h5">{name}</Typography>
         <Typography variant="body2" color="text.secondary">
           {description}
         </Typography>
       </CardContent>
       <CardActions>
         {actionButtons.map(({ icon, url, ...rest }) => (
-          <IconButton {...rest} key={url} onClick={() => _handleClick(url)}>
+          <IconButton
+            {...rest}
+            disabled={!url}
+            key={url}
+            onClick={() => _handleClick(url)}
+          >
             {icon}
           </IconButton>
         ))}

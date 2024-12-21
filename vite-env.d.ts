@@ -2,6 +2,7 @@
 
 interface ImportMetaEnv {
   readonly VITE_GITHUB_ACCESS_TOKEN: string;
+  readonly VITE_GITHUB_USERNAME: string;
   // more env variables...
 }
 
