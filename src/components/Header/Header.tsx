@@ -7,6 +7,7 @@ import { FC } from 'react';
 
 import AppMenu from '../AppMenu/AppMenu.tsx';
 import MobileMenu from '../AppMenu/MobileMenu.tsx';
+import ThemeToggleButton from '../ThemeToggleButton/ThemeToggleButton.tsx';
 
 const rightAppBarSx: SxProps<Theme> = {
   display: 'flex',
@@ -34,6 +35,7 @@ const Header: FC = () => {
             <Box sx={rightMenuSx}>
               <AppMenu />
             </Box>
+            <ThemeToggleButton/>
           </Box>
         </Toolbar>
       </Container>
