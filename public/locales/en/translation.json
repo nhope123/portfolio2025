@@ -14,5 +14,9 @@
     "home": "Home",
     "projects": "Projects",
     "skills": "Skills"
+  },
+  "settings": {
+    "switchTheme": "Switch to {{mode}} mode"
   }
+
 }
