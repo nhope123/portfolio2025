@@ -17,6 +17,12 @@ const rootSx: SxProps<Theme> = {
   width: '100%',
 };
 
+const imageSx: SxProps<Theme> = {
+  // height: 140,
+  // aspectRatio: '345/140',
+  // top: 0,
+}
+
 const PortfolioCard: FC<PortfolioCardProps> = (props) => {
   const { description, imageUrl, repositoryUrl, name, homepageUrl } = props;
   const { t } = useTranslation('translation');
@@ -51,7 +57,9 @@ const PortfolioCard: FC<PortfolioCardProps> = (props) => {
       <CardMedia
         alt={`${name} card`}
         component="img"
-        height={140}
+        // height={140}
+        // width={345}
+        sx={imageSx}
         image={imageUrl}
       />
       <CardContent>

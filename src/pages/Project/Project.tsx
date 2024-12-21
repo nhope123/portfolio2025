@@ -16,7 +16,11 @@ const rootSx: SxProps<Theme> = {
   justifyContent: 'center',
   flexWrap: 'wrap',
   gap: 3,
+  pt: 8,
 };
+
+const generateScreenshotUrl = (repo: string) =>
+  `https://raw.githubusercontent.com/${import.meta.env.VITE_GITHUB_USERNAME}/${repo}/main/public/screenshot.png`;
 
 const Project: FC = () => {
   // Execute query
@@ -28,16 +32,16 @@ const Project: FC = () => {
     (): PortfolioCardProps[] =>
       data
         ? data.user.repositories.nodes
-            .filter((rep: any) => rep.homepageUrl)
-            .map((i: any) => { // TODO: create type from github api
+            .filter((rep: any) => rep.name === 'creole_food') // rep.homepageUrl)
+            .map((i: any) => {
+              // TODO: create type from github api
               return {
                 name: i.name
                   .split(/[\s-]/)
                   .map((w: string) => w.charAt(0).toUpperCase() + w.slice(1))
                   .join(' '),
                 description: i.description,
-                imageUrl:
-                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5fTvBqEpyLmHNzZVx0YlKR5wOxFoLRAtZxA&s', // TODO: use repo with a screenshot folder to get the image
+                imageUrl: generateScreenshotUrl(i.name),
                 repositoryUrl: i.url,
                 homepageUrl: i.homepageUrl,
               };
