@@ -1,7 +1,8 @@
 {
   "generic": {
     "github": "Github repository",
-    "website": "Website"
+    "website": "Website",
+    "authorSurname": "Hope"
   },
   "home": {
     "button1": "View Projects",
@@ -18,6 +19,9 @@
     "home": "Home",
     "projects": "Projects",
     "skills": "Skills"
+  },
+  "project": {
+    "project": "Project"
   },
   "settings": {
     "switchTheme": "Switch to {{mode}} mode"

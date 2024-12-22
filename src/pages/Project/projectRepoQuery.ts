@@ -12,8 +12,23 @@ const getRepositories = gql`
           name
           description
           url
-          visibility
           homepageUrl
+          createdAt
+
+          repositoryTopics(first: 20) {
+                nodes {
+                    topic {
+                        name
+                    }
+                }
+            }
+            languages(first: 5) {
+                edges {
+                    node {
+                    name
+                    }
+                }
+            }
         }
       }
     }

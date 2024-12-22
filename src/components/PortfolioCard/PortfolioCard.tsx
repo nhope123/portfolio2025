@@ -1,10 +1,11 @@
 import GitHub from '@mui/icons-material/GitHub';
-import WebRounded from '@mui/icons-material/WebRounded';
+import PublicRounded from '@mui/icons-material/PublicRounded';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import IconButton, { type IconButtonProps } from '@mui/material/IconButton';
+import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { FC, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -15,16 +16,27 @@ import type { PortfolioCardProps } from './types.ts';
 const rootSx: SxProps<Theme> = {
   maxWidth: 345,
   width: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
 };
 
 const imageSx: SxProps<Theme> = {
   // height: 140,
-  // aspectRatio: '345/140',
+  aspectRatio: '1.5', // '345/140',
   // top: 0,
-}
+};
+
+const actionSx: SxProps<Theme> = {
+  bottom: 0,
+  display: 'flex',
+  justifyContent: 'space-between',
+  flexGrow: 0,
+};
 
 const PortfolioCard: FC<PortfolioCardProps> = (props) => {
-  const { description, imageUrl, repositoryUrl, name, homepageUrl } = props;
+  const { description, imageUrl, repositoryUrl, name, homepageUrl, createdAt } =
+    props;
   const { t } = useTranslation('translation');
 
   const actionButtons = useMemo(
@@ -36,10 +48,10 @@ const PortfolioCard: FC<PortfolioCardProps> = (props) => {
         icon: <GitHub />,
       },
       {
-        color: 'secondary' as IconButtonProps['color'],
+        color: 'primary' as IconButtonProps['color'],
         title: t('generic.website'),
         url: homepageUrl,
-        icon: <WebRounded />,
+        icon: <PublicRounded />,
       },
     ],
     [repositoryUrl, t, homepageUrl],
@@ -57,10 +69,8 @@ const PortfolioCard: FC<PortfolioCardProps> = (props) => {
       <CardMedia
         alt={`${name} card`}
         component="img"
-        // height={140}
-        // width={345}
-        sx={imageSx}
         image={imageUrl}
+        sx={imageSx}
       />
       <CardContent>
         <Typography variant="h5">{name}</Typography>
@@ -68,17 +78,22 @@ const PortfolioCard: FC<PortfolioCardProps> = (props) => {
           {description}
         </Typography>
       </CardContent>
-      <CardActions>
-        {actionButtons.map(({ icon, url, ...rest }) => (
-          <IconButton
-            {...rest}
-            disabled={!url}
-            key={url}
-            onClick={() => _handleClick(url)}
-          >
-            {icon}
-          </IconButton>
-        ))}
+      <CardActions sx={actionSx}>
+        <Stack direction={'row'}>
+          {actionButtons.map(({ icon, url, ...rest }) => (
+            <IconButton
+              {...rest}
+              disabled={!url}
+              key={url}
+              onClick={() => _handleClick(url)}
+            >
+              {icon}
+            </IconButton>
+          ))}
+        </Stack>
+        <Typography variant="caption" color="text.secondary">
+          {createdAt}
+        </Typography>
       </CardActions>
     </Card>
   );

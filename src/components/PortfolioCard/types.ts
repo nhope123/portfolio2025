@@ -1,7 +1,8 @@
 export interface PortfolioCardProps {
+  createdAt: string;
   description: string;
-  imageUrl: string;
-  repositoryUrl: string;
-  name: string;
   homepageUrl?: string;
+  imageUrl: string;
+  name: string;
+  repositoryUrl: string;
 }
